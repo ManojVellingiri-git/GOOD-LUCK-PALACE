@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import {
   ShieldCheck, Package, ShoppingBag, Tag, Settings, Plus, FileText,
   Search, CheckCircle2, Clock, Truck, XCircle, AlertCircle, Phone,
-  Upload, Trash2, Edit3, Lock, RefreshCw
+  Upload, Trash2, Edit3, Lock, RefreshCw, Sparkles
 } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
