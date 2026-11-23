@@ -4,7 +4,7 @@ import {
   LayoutDashboard, Package, Layers, Award, Boxes, ShoppingBag,
   PhoneCall, Users, TicketPercent, Gift, BarChart3, Settings,
   ShieldCheck, MessageSquareQuote, LogOut, ChevronLeft, ChevronRight,
-  ExternalLink, Store
+  ExternalLink, Store, Globe
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { UserOut } from "@/lib/types";
@@ -21,6 +21,7 @@ export type AdminTab =
   | "coupons"
   | "hampers"
   | "analytics"
+  | "content"
   | "settings"
   | "staff"
   | "reviews";
@@ -71,6 +72,7 @@ export default function AdminSidebar({
       items: [
         { id: "coupons" as AdminTab, label: "Coupons & Offers", icon: TicketPercent },
         { id: "analytics" as AdminTab, label: "Reports & Analytics", icon: BarChart3 },
+        { id: "content" as AdminTab, label: "Website Content", icon: Globe },
         { id: "reviews" as AdminTab, label: "Customer Reviews", icon: MessageSquareQuote },
       ],
     },

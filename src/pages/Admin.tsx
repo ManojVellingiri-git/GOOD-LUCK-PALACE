@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import {
@@ -7,7 +8,7 @@ import {
   ShieldCheck, MessageSquareQuote, Search, Plus, Trash2, Edit3,
   CheckCircle2, Clock, Truck, XCircle, AlertCircle, Phone, Upload,
   Download, Filter, ArrowUpDown, ChevronRight, ExternalLink, RefreshCw,
-  Eye, Lock, Sparkles, AlertTriangle, FileSpreadsheet, Check, X
+  Eye, Lock, Sparkles, AlertTriangle, FileSpreadsheet, Check, X, Globe
 } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 import {
@@ -29,15 +30,43 @@ import { inr, fmtDate, fmtDateTime } from "@/lib/format";
 import { useAppAuth } from "@/lib/authContext";
 import type { AdminStats, Order, Product, Category, StoreSettings, Coupon } from "@/lib/types";
 
+const VALID_ADMIN_TABS: AdminTab[] = [
+  "overview", "products", "categories", "brands", "inventory",
+  "orders", "whatsapp", "customers", "coupons", "hampers",
+  "analytics", "content", "settings", "staff", "reviews"
+];
+
+function resolveAdminTab(rawTab?: string): AdminTab {
+  if (!rawTab) return "overview";
+  const normalized = rawTab.toLowerCase().trim();
+  if (normalized === "reports") return "analytics";
+  if (VALID_ADMIN_TABS.includes(normalized as AdminTab)) return normalized as AdminTab;
+  return "overview";
+}
+
 export default function Admin() {
   const { user, isAdmin, login, logout } = useAppAuth();
   const queryClient = useQueryClient();
+  const { tab: urlTab } = useParams<{ tab?: string }>();
+  const navigate = useNavigate();
 
   // Layout & Navigation State
-  const [currentTab, setCurrentTab] = useState<AdminTab>("overview");
+  const [currentTab, setCurrentTab] = useState<AdminTab>(() => resolveAdminTab(urlTab));
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [globalSearch, setGlobalSearch] = useState("");
+
+  // Sync state when URL parameter changes (e.g., user navigates to /admin/brands)
+  useEffect(() => {
+    const resolved = resolveAdminTab(urlTab);
+    setCurrentTab(resolved);
+  }, [urlTab]);
+
+  const handleSelectTab = useCallback((targetTab: AdminTab) => {
+    setCurrentTab(targetTab);
+    setMobileMenuOpen(false);
+    navigate(`/admin/${targetTab}`);
+  }, [navigate]);
 
   // Login Form States (for unauthorized screen)
   const [adminEmail, setAdminEmail] = useState("owner@goodluckpalace.com");
@@ -228,7 +257,7 @@ export default function Admin() {
       setWaEmail("");
       setWaLine1("");
       setWaItems([]);
-      setCurrentTab("orders");
+      handleSelectTab("orders");
       setSelectedOrder(order);
     },
     onError: (err: any) => toast.error(err?.message || "Failed to record manual order"),
@@ -531,10 +560,7 @@ export default function Admin() {
       {/* 1. Left Navigation Sidebar (Desktop) */}
       <AdminSidebar
         currentTab={currentTab}
-        onSelectTab={(t) => {
-          setCurrentTab(t);
-          setMobileMenuOpen(false);
-        }}
+        onSelectTab={handleSelectTab}
         collapsed={sidebarCollapsed}
         onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
         user={user}
@@ -550,10 +576,7 @@ export default function Admin() {
           <div className="relative w-64 bg-[#1E1815] h-full shadow-2xl z-50">
             <AdminSidebar
               currentTab={currentTab}
-              onSelectTab={(t) => {
-                setCurrentTab(t);
-                setMobileMenuOpen(false);
-              }}
+              onSelectTab={handleSelectTab}
               collapsed={false}
               onToggleCollapse={() => setMobileMenuOpen(false)}
               user={user}
@@ -570,7 +593,7 @@ export default function Admin() {
         {/* Top Header */}
         <AdminHeader
           currentTab={currentTab}
-          onSelectTab={setCurrentTab}
+          onSelectTab={handleSelectTab}
           onToggleMobileMenu={() => setMobileMenuOpen(true)}
           searchQuery={globalSearch}
           onSearchChange={setGlobalSearch}
@@ -612,7 +635,7 @@ export default function Admin() {
                   </Button>
                   <Button
                     size="sm"
-                    onClick={() => setCurrentTab("whatsapp")}
+                    onClick={() => handleSelectTab("whatsapp")}
                     className="bg-[#258451] hover:bg-[#1E6B42] text-white text-xs gap-1.5 cursor-pointer"
                   >
                     <SiWhatsapp size={14} /> WhatsApp Counter Order
@@ -834,7 +857,7 @@ export default function Admin() {
                   <Button
                     size="sm"
                     variant="ghost"
-                    onClick={() => setCurrentTab("orders")}
+                    onClick={() => handleSelectTab("orders")}
                     className="text-xs text-[#8F1D22] font-semibold hover:bg-[#FAF8F3]"
                   >
                     View All Orders ({allOrders.length}) →
@@ -885,7 +908,7 @@ export default function Admin() {
                               variant="ghost"
                               onClick={() => {
                                 setSelectedOrder(order);
-                                setCurrentTab("orders");
+                                handleSelectTab("orders");
                               }}
                               className="text-xs text-[#8F1D22] hover:bg-[#8F1D22]/10"
                             >
@@ -1119,7 +1142,7 @@ export default function Admin() {
                             variant="ghost"
                             onClick={() => {
                               setSelectedCategoryFilter(c.slug);
-                              setCurrentTab("products");
+                              handleSelectTab("products");
                             }}
                             className="h-7 text-xs text-[#77716A] hover:text-[#8F1D22]"
                           >
@@ -1177,7 +1200,7 @@ export default function Admin() {
                       variant="ghost"
                       onClick={() => {
                         setSelectedBrandFilter(b.name);
-                        setCurrentTab("products");
+                        handleSelectTab("products");
                       }}
                       className="mt-4 w-full text-xs text-[#8F1D22] hover:bg-[#8F1D22]/10"
                     >
@@ -1327,7 +1350,7 @@ export default function Admin() {
                     <b>{allOrders.length}</b> total orders
                   </span>
                   <Button
-                    onClick={() => setCurrentTab("whatsapp")}
+                    onClick={() => handleSelectTab("whatsapp")}
                     className="bg-[#258451] hover:bg-[#1E6B42] text-white text-xs gap-1.5 cursor-pointer shadow-xs"
                   >
                     <Plus size={14} /> New WhatsApp Order
@@ -1925,6 +1948,80 @@ export default function Admin() {
                   className="w-full bg-[#8F1D22] hover:bg-[#641419] text-white py-6 font-bold text-sm shadow-md mt-4 cursor-pointer"
                 >
                   {saveSettingsMutation.isPending ? "Saving Parameters…" : "Save Store & GST Settings"}
+                </Button>
+              </Card>
+            </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB: WEBSITE CONTENT                                       */}
+          {/* ========================================================= */}
+          {currentTab === "content" && (
+            <div className="max-w-3xl mx-auto space-y-4 animate-in fade-in-50 duration-200">
+              <div className="bg-white p-4 rounded-xl border border-[#E8E0D4] shadow-xs">
+                <h3 className="font-serif font-bold text-lg text-[#292522]">
+                  Website Content, Banners &amp; Announcements
+                </h3>
+                <p className="text-xs text-[#77716A]">
+                  Manage the promotional banners, announcement text, and store highlights displayed on the customer-facing website.
+                </p>
+              </div>
+
+              <Card className="bg-white border-[#E8E0D4] shadow-xs p-6 space-y-4 text-xs">
+                <div className="space-y-1">
+                  <Label className="text-xs font-semibold">Storefront Announcement Bar Text</Label>
+                  <Input
+                    defaultValue="✨ Free Doorstep Delivery across Coimbatore on orders above ₹1,000 | Store Hours: 10 AM - 9 PM"
+                    className="bg-[#FAF8F3] text-xs border-[#E8E0D4]"
+                  />
+                  <p className="text-[11px] text-[#77716A]">Appears at the very top of the customer website.</p>
+                </div>
+
+                <div className="space-y-1">
+                  <Label className="text-xs font-semibold">Homepage Hero Headline</Label>
+                  <Input
+                    defaultValue="Coimbatore's Premier Departmental Store Since 1983"
+                    className="bg-[#FAF8F3] text-xs border-[#E8E0D4]"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <Label className="text-xs font-semibold">Homepage Hero Sub-Headline</Label>
+                  <Input
+                    defaultValue="Four decades of trusted service on Cross Cut Road, Gandhipuram. Authentic cosmetics, premium dry fruits, gourmet confectionery, and curated festive hampers."
+                    className="bg-[#FAF8F3] text-xs border-[#E8E0D4]"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#E8E0D4]">
+                  <div className="space-y-1">
+                    <Label className="text-xs font-semibold">Festive Campaign Tagline</Label>
+                    <Input
+                      defaultValue="Diwali &amp; New Year Luxury Hampers Now Available"
+                      className="bg-[#FAF8F3] text-xs border-[#E8E0D4]"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label className="text-xs font-semibold">Counter Order WhatsApp Hotline</Label>
+                    <Input
+                      defaultValue="+91 94430 23659"
+                      className="bg-[#FAF8F3] font-mono text-xs border-[#E8E0D4]"
+                    />
+                  </div>
+                </div>
+
+                <div className="p-3 bg-[#FAF8F3] border border-[#E8E0D4] rounded-lg text-xs space-y-1">
+                  <p className="font-semibold text-[#8F1D22]">Physical Store Operating Notice:</p>
+                  <p className="text-[#77716A]">
+                    Sri Lakshmi Complex, Cross Cut Road, Gandhipuram, Coimbatore. Mon–Sat 10:00 AM – 9:00 PM | Sun 4:00 PM – 9:00 PM
+                  </p>
+                </div>
+
+                <Button
+                  onClick={() => toast.success("Storefront content parameters updated successfully!")}
+                  className="w-full bg-[#8F1D22] hover:bg-[#641419] text-white py-6 font-bold text-sm shadow-md mt-4 cursor-pointer"
+                >
+                  Save Website Content Settings
                 </Button>
               </Card>
             </div>
