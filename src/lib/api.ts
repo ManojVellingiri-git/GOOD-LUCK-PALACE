@@ -99,6 +99,7 @@ function getMockFallback<T>(path: string): T | null {
         payment_status: "paid",
         status: "processing",
         source: "web",
+        status_history: [{ status: "processing", note: "Order placed online", created_at: new Date(Date.now() - 3600000).toISOString() }],
         created_at: new Date(Date.now() - 3600000).toISOString(),
       },
       {
@@ -122,6 +123,7 @@ function getMockFallback<T>(path: string): T | null {
         payment_status: "pending",
         status: "pending",
         source: "whatsapp",
+        status_history: [{ status: "pending", note: "Counter WhatsApp inquiry", created_at: new Date(Date.now() - 7200000).toISOString() }],
         created_at: new Date(Date.now() - 7200000).toISOString(),
       }
     ] as T;

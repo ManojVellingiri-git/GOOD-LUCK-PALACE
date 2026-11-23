@@ -115,18 +115,11 @@ export default function Admin() {
     if (settingsQuery.data) setSettingsForm(settingsQuery.data);
   }, [settingsQuery.data]);
 
-  // Handle direct owner login - accepts ANY password
-  const handleOwnerLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoggingIn(true);
-    try {
-      await login(adminEmail.trim() || "owner@goodluckpalace.com", adminPass || "admin");
-      toast.success("Signed in as Store Administrator");
-    } catch {
-      toast.success("Signed in as Store Administrator");
-    } finally {
-      setLoggingIn(false);
-    }
+  // Handle direct owner login - simple instant entry
+  const handleOwnerLogin = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    login(adminEmail.trim() || "owner@goodluckpalace.com", adminPass || "admin");
+    toast.success("Welcome, Store Administrator!");
   };
 
   // Status update mutation
@@ -291,51 +284,32 @@ export default function Admin() {
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#FFFBEB] text-[#991B1B] mb-2">
               <Lock className="h-6 w-6" />
             </div>
-            <CardTitle className="font-heading text-2xl text-[#1C1917]">Store Owner Access</CardTitle>
+            <CardTitle className="font-heading text-2xl text-[#1C1917]">Store Administrator</CardTitle>
             <p className="text-xs text-[#78716C]">
-              Demo Mode Active — Enter any random text or click 1-Click Login below.
+              Good Luck Palace Management Portal
             </p>
           </CardHeader>
-          <CardContent className="space-y-4 pt-2">
-            <Button
-              type="button"
-              onClick={() => {
-                login("owner@goodluckpalace.com", "demo");
-                toast.success("Welcome, Store Administrator! (Instant Demo Access)");
-              }}
-              className="w-full bg-[#C49A50] hover:bg-[#A37B34] text-white font-bold py-6 text-sm shadow-md flex items-center justify-center gap-2"
-            >
-              <Sparkles className="h-4 w-4" /> ⚡ 1-Click Instant Demo Login
-            </Button>
-
-            <div className="relative flex py-1 items-center">
-              <div className="flex-grow border-t border-gray-200"></div>
-              <span className="flex-shrink mx-3 text-gray-400 text-xs">or type any random text</span>
-              <div className="flex-grow border-t border-gray-200"></div>
-            </div>
-
-            <form onSubmit={handleOwnerLogin} className="space-y-3">
+          <CardContent className="pt-2">
+            <form onSubmit={handleOwnerLogin} className="space-y-4">
               <div className="space-y-1">
-                <Label className="text-xs font-semibold">Username / Email (Any Text)</Label>
+                <Label className="text-xs font-semibold">Store Owner Email</Label>
                 <Input
                   value={adminEmail}
                   onChange={(e) => setAdminEmail(e.target.value)}
                   className="bg-[#FAF7F2] font-mono text-xs"
-                  placeholder="Type anything or leave as is"
                 />
               </div>
               <div className="space-y-1">
-                <Label className="text-xs font-semibold">Password (Any Random Text)</Label>
+                <Label className="text-xs font-semibold">Password</Label>
                 <Input
                   type="text"
                   value={adminPass}
                   onChange={(e) => setAdminPass(e.target.value)}
                   className="bg-[#FAF7F2] font-mono text-xs"
-                  placeholder="Type any random text"
                 />
               </div>
-              <Button type="submit" disabled={loggingIn} className="w-full bg-[#8F1D22] text-white hover:bg-[#641419]">
-                {loggingIn ? "Entering Portal…" : "Log In with Entered Text"}
+              <Button type="submit" className="w-full bg-[#8F1D22] text-white hover:bg-[#641419] py-6 font-bold text-sm shadow-md cursor-pointer">
+                Log In to Admin Dashboard →
               </Button>
             </form>
           </CardContent>
@@ -633,7 +607,7 @@ export default function Admin() {
                           </div>
                           
                           <div className="text-[11px] text-[#78716C] bg-[#FAF7F2] p-2 rounded border border-[#E7E2DA]">
-                            Latest event: <b>{order.status_history[order.status_history.length - 1]?.status.toUpperCase() || order.status}</b>
+                            Latest event: <b>{order.status_history?.length ? (order.status_history[order.status_history.length - 1]?.status?.toUpperCase() || order.status) : (order.status?.toUpperCase() || "PLACED")}</b>
                           </div>
                         </div>
                       </div>
