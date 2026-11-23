@@ -1,0 +1,712 @@
+{
+  "settings": {
+    "store_name": "Good Luck Palace",
+    "tagline": "Coimbatore's Cherished Departmental Store Since 1983",
+    "address_lines": [
+      "Shop No. 45, Sri Lakshmi Complex, Cross Cut Road",
+      "Opp. Ramraj Textiles, Gandhipuram, Coimbatore",
+      "Tamil Nadu 641012"
+    ],
+    "phone": "+91 422 223 6592",
+    "whatsapp_number": "919442236592",
+    "email": "",
+    "hours": [
+      "Mon – Sat: 10:00 AM – 9:00 PM",
+      "Sunday: 4:00 PM – 9:00 PM"
+    ],
+    "gst_enabled": false,
+    "gstin": "",
+    "gst_percent": 0,
+    "delivery_fee": 40,
+    "free_delivery_above": 999,
+    "serviceable_areas": [
+      "Gandhipuram",
+      "RS Puram",
+      "Saibaba Colony",
+      "Peelamedu",
+      "R.S. Puram",
+      "Townhall",
+      "Ukkadam",
+      "Ganapathy"
+    ]
+  },
+  "categories": [
+    {
+      "id": "47098e1c-de29-57cf-9587-87e0f60aa940",
+      "slug": "accessories",
+      "name": "Bags & Accessories",
+      "description": "Everyday bags, gift carriers and handy accessories picked by our counter team.",
+      "image_url": null,
+      "seo_title": "Bags & Accessories | Good Luck Palace Coimbatore",
+      "seo_description": "Bags and everyday accessories from Good Luck Palace, the departmental store on Cross Cut Road, Gandhipuram, Coimbatore."
+    },
+    {
+      "id": "a0bb12ef-0a4f-5aa6-a3a5-f6bf62365e28",
+      "slug": "cosmetics",
+      "name": "Cosmetics & Beauty",
+      "description": "Skincare, makeup and beauty essentials from Lakme, Maybelline, Plum, Minimalist and more.",
+      "image_url": "https://images.unsplash.com/1593418632104-71bd668d1af1?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "seo_title": "Cosmetics & Beauty Shop in Gandhipuram, Coimbatore | Good Luck Palace",
+      "seo_description": "Skincare, makeup and beauty products in Coimbatore — Good Luck Palace, Cross Cut Road's trusted cosmetics shop since 1983."
+    },
+    {
+      "id": "f2ebc48b-1752-5e04-80ff-65b0cf4c0352",
+      "slug": "dry-fruits",
+      "name": "Dry Fruits & Nuts",
+      "description": "Premium almonds, cashews, pistachios, raisins, figs and walnuts — handpicked and freshly packed.",
+      "image_url": "https://images.unsplash.com/1524593313283-1e092f06b2f0?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "seo_title": "Dry Fruits Shop Cross Cut Road, Coimbatore | Good Luck Palace Gandhipuram",
+      "seo_description": "Almonds, cashews, pistachios, anjeer and raisins from Good Luck Palace — Coimbatore's trusted dry fruits shop on Cross Cut Road, Gandhipuram."
+    },
+    {
+      "id": "b71faaa6-32cb-52c9-a7ec-74ec120c25c0",
+      "slug": "hampers",
+      "name": "Festive & Gift Hampers",
+      "description": "Curated festive hampers — Diwali boxes, wedding return gifts, corporate gifting and perfume gift sets, assembled in-store.",
+      "image_url": "https://images.unsplash.com/1681542787048-be0c067fb962?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "seo_title": "Festive & Gift Hampers Coimbatore | Good Luck Palace",
+      "seo_description": "Diwali hampers, wedding return gifts, corporate gift boxes and perfume gift sets from Good Luck Palace, Coimbatore — est. 1983."
+    },
+    {
+      "id": "c016a845-4bd2-565e-ae3e-b37ff5e68041",
+      "slug": "groceries",
+      "name": "Groceries & Provisions",
+      "description": "Household essentials, staples, provisions and packaged foods — trusted brands at honest prices since 1983.",
+      "image_url": "https://images.unsplash.com/1532336414038-cf19250c5757?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "seo_title": "Groceries & Household Essentials in Gandhipuram | Good Luck Palace Coimbatore",
+      "seo_description": "Buy rice, dal, atta, oil, spices and packaged groceries from Good Luck Palace, the trusted departmental store on Cross Cut Road, Gandhipuram, Coimbatore since 1983."
+    },
+    {
+      "id": "b1daa5eb-c9a3-54ef-a181-cdba32d6e18c",
+      "slug": "perfumes",
+      "name": "Perfumes & Fragrances",
+      "description": "Perfumes and fragrances for every occasion — from everyday deodorants to signature eau de parfums.",
+      "image_url": "https://images.unsplash.com/1657287467374-815cb1477538?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "seo_title": "Perfume Shop Coimbatore | Good Luck Palace, Gandhipuram",
+      "seo_description": "Perfumes and fragrances in Coimbatore — Skinn, Fogg, Yardley and more at Good Luck Palace, Gandhipuram's departmental store since 1983."
+    }
+  ],
+  "products": {
+    "items": [
+      {
+        "id": "dd1a02ba-52e9-5bd1-97e9-6935327c319e",
+        "slug": "aashirvaad-select-whole-wheat-atta-aashirvaad",
+        "name": "Aashirvaad Select Whole Wheat Atta",
+        "brand": "Aashirvaad",
+        "description": "100% whole wheat sharbati atta, stone-ground for soft rotis.",
+        "category": "groceries",
+        "price": 285,
+        "mrp": 320,
+        "unit": "5 kg",
+        "image_url": "https://images.pexels.com/photos/39815341.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "atta",
+          "flour",
+          "staple"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "979036e8-0934-5cb5-91ce-2cb4bc7f69f2",
+        "slug": "tata-salt-iodised-tata",
+        "name": "Tata Salt Iodised",
+        "brand": "Tata",
+        "description": "India's trusted iodised salt, vacuum-evaporated and free-flowing.",
+        "category": "groceries",
+        "price": 28,
+        "mrp": 30,
+        "unit": "1 kg",
+        "image_url": "https://images.pexels.com/photos/12419503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "salt",
+          "staple"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "46d7d564-6be8-5052-920c-04551d600d54",
+        "slug": "india-gate-classic-basmati-rice-india-gate",
+        "name": "India Gate Classic Basmati Rice",
+        "brand": "India Gate",
+        "description": "Aged long-grain basmati with a rich aroma for biryani and pulao.",
+        "category": "groceries",
+        "price": 145,
+        "mrp": 160,
+        "unit": "1 kg",
+        "image_url": "https://images.pexels.com/photos/39815341.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "rice",
+          "basmati",
+          "staple"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "53bb9524-5782-545e-b004-eb24ebf85d50",
+        "slug": "udhaiyam-toor-dal-udhaiyam",
+        "name": "Udhaiyam Toor Dal",
+        "brand": "Udhaiyam",
+        "description": "Polished toor dal (arhar) — clean, uniform grains for everyday cooking.",
+        "category": "groceries",
+        "price": 155,
+        "mrp": 170,
+        "unit": "1 kg",
+        "image_url": "https://images.pexels.com/photos/12419503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "dal",
+          "pulses",
+          "staple"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "2eb45ec4-1c30-51b9-b307-196c90c5d414",
+        "slug": "fortune-sunlite-refined-sunflower-oil-fortune",
+        "name": "Fortune Sunlite Refined Sunflower Oil",
+        "brand": "Fortune",
+        "description": "Light, refined sunflower oil rich in Vitamin E.",
+        "category": "groceries",
+        "price": 145,
+        "mrp": 155,
+        "unit": "1 L",
+        "image_url": "https://images.pexels.com/photos/39815341.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "oil",
+          "cooking"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "16777bd9-fb3b-5b0b-a98a-992b0ec1f4f5",
+        "slug": "aachi-sambar-powder-aachi",
+        "name": "Aachi Sambar Powder",
+        "brand": "Aachi",
+        "description": "Classic Tamil-style sambar powder ground from 14 spices.",
+        "category": "groceries",
+        "price": 68,
+        "mrp": 75,
+        "unit": "200 g",
+        "image_url": "https://images.pexels.com/photos/12419503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "masala",
+          "spices"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "8b2eb2cc-6df5-514e-a63a-974fd54e2518",
+        "slug": "bru-gold-instant-coffee-bru",
+        "name": "Bru Gold Instant Coffee",
+        "brand": "Bru",
+        "description": "Blend of 70% coffee and 30% chicory — strong South Indian filter taste.",
+        "category": "groceries",
+        "price": 235,
+        "mrp": 255,
+        "unit": "200 g",
+        "image_url": "https://images.pexels.com/photos/39815341.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "coffee",
+          "beverage"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "0acb0fd4-e870-5201-b225-90cb14ee70da",
+        "slug": "lion-premium-black-dates-lion-dates",
+        "name": "Lion Premium Black Dates",
+        "brand": "Lion Dates",
+        "description": "Soft, sweet black dates handpicked and hygienically packed.",
+        "category": "groceries",
+        "price": 135,
+        "mrp": 150,
+        "unit": "500 g",
+        "image_url": "https://images.pexels.com/photos/12419503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "dates",
+          "dry fruits"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "93803613-ab29-5fbf-869c-ed69ddbf8a34",
+        "slug": "lakme-9to5-weightless-mousse-foundation-lakme",
+        "name": "Lakme 9to5 Weightless Mousse Foundation",
+        "brand": "Lakme",
+        "description": "Lightweight matte mousse foundation with all-day coverage.",
+        "category": "cosmetics",
+        "price": 399,
+        "mrp": 450,
+        "unit": "25 g",
+        "image_url": "https://images.unsplash.com/1636740599648-ae84f705fc2e?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "makeup",
+          "foundation"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "8e5d741b-00a3-5dd7-9ba6-912ff599c9c1",
+        "slug": "maybelline-colossal-kajal-maybelline",
+        "name": "Maybelline Colossal Kajal",
+        "brand": "Maybelline",
+        "description": "Intense black kajal with 12-hour smudge-proof wear.",
+        "category": "cosmetics",
+        "price": 249,
+        "mrp": 299,
+        "unit": "0.35 g",
+        "image_url": "https://images.unsplash.com/1576426863848-c21f53c60b19?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "kajal",
+          "eye makeup"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "b6651004-6d01-5e0d-90ee-2357c95ea9f7",
+        "slug": "plum-green-tea-alcohol-free-toner-plum",
+        "name": "Plum Green Tea Alcohol-Free Toner",
+        "brand": "Plum",
+        "description": "Pore-tightening green tea toner for oily and acne-prone skin.",
+        "category": "cosmetics",
+        "price": 349,
+        "mrp": 399,
+        "unit": "150 ml",
+        "image_url": "https://images.unsplash.com/1631730359585-38a4935cbec4?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "skincare",
+          "toner"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "2fc1005d-73c4-514d-a076-bcc69d709f14",
+        "slug": "minimalist-salicylic-acid-2-face-wash-minimalist",
+        "name": "Minimalist Salicylic Acid 2% Face Wash",
+        "brand": "Minimalist",
+        "description": "Gentle salicylic acid cleanser for acne-prone and oily skin.",
+        "category": "cosmetics",
+        "price": 299,
+        "mrp": 349,
+        "unit": "100 ml",
+        "image_url": "https://images.unsplash.com/1613803745799-ba6c10aace85?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "skincare",
+          "face wash"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "e9b8d972-5c95-5c26-91f9-a67e843ae8ee",
+        "slug": "nivea-soft-light-moisturising-cream-nivea",
+        "name": "Nivea Soft Light Moisturising Cream",
+        "brand": "Nivea",
+        "description": "Fast-absorbing vitamin E and jojoba oil moisturiser for face, hands and body.",
+        "category": "cosmetics",
+        "price": 185,
+        "mrp": 199,
+        "unit": "200 ml",
+        "image_url": "https://images.pexels.com/photos/7670680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "moisturiser",
+          "skincare"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "67fad813-3d0d-5cd0-83b7-a216f319da98",
+        "slug": "himalaya-purifying-neem-face-wash-himalaya",
+        "name": "Himalaya Purifying Neem Face Wash",
+        "brand": "Himalaya",
+        "description": "Neem and turmeric face wash that clears impurities without drying.",
+        "category": "cosmetics",
+        "price": 175,
+        "mrp": 195,
+        "unit": "150 ml",
+        "image_url": "https://images.pexels.com/photos/16008945.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "face wash",
+          "skincare"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "7ae40486-15ba-542e-a675-d674cd1b51f0",
+        "slug": "streax-professional-gloss-hair-serum-streax",
+        "name": "Streax Professional Gloss Hair Serum",
+        "brand": "Streax",
+        "description": "Frizz-control gloss serum for silky, manageable hair.",
+        "category": "cosmetics",
+        "price": 210,
+        "mrp": 235,
+        "unit": "100 ml",
+        "image_url": "https://images.unsplash.com/1636740599648-ae84f705fc2e?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": false,
+        "is_hamper": false,
+        "tags": [
+          "hair care",
+          "serum"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "1f71acb4-8d6c-5be1-81b9-b1458911f11f",
+        "slug": "skinn-by-titan-celest-eau-de-parfum-skinn-by-titan",
+        "name": "Skinn by Titan Celest Eau de Parfum",
+        "brand": "Skinn by Titan",
+        "description": "Fresh woody-floral eau de parfum with 8+ hour stay.",
+        "category": "perfumes",
+        "price": 1245,
+        "mrp": 1495,
+        "unit": "50 ml",
+        "image_url": "https://images.unsplash.com/1680503504148-25f2d178ff05?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "perfume",
+          "fragrance",
+          "gift"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "88869f07-75e5-5cbd-b96e-52e313ac3366",
+        "slug": "fogg-fragrant-body-spray-napoleon-fogg",
+        "name": "Fogg Fragrant Body Spray — Napoleon",
+        "brand": "Fogg",
+        "description": "Long-lasting everyday body spray, no gas, full fragrance.",
+        "category": "perfumes",
+        "price": 199,
+        "mrp": 225,
+        "unit": "120 ml",
+        "image_url": "https://images.unsplash.com/1643797517714-a273548abc3c?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "deodorant",
+          "body spray"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "f53a6516-40f2-5a89-8739-5c9d093f8ea6",
+        "slug": "yardley-london-english-lavender-edc-yardley-london",
+        "name": "Yardley London English Lavender EDC",
+        "brand": "Yardley London",
+        "description": "The timeless lavender eau de toilette — clean, classic, calming.",
+        "category": "perfumes",
+        "price": 449,
+        "mrp": 499,
+        "unit": "50 ml",
+        "image_url": "https://images.unsplash.com/1761329842950-f3551938e4da?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "perfume",
+          "fragrance"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "cc2a07ce-2a35-5f40-a597-75f9ce961357",
+        "slug": "premium-california-almonds-happilo",
+        "name": "Premium California Almonds",
+        "brand": "Happilo",
+        "description": "Crunchy W320 California almonds, naturally sun-dried.",
+        "category": "dry-fruits",
+        "price": 385,
+        "mrp": 450,
+        "unit": "500 g",
+        "image_url": "https://images.unsplash.com/1722886705787-4b8d676309fa?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "almonds",
+          "badam"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "a781dad1-c8f7-5b13-b382-8fe40880ec10",
+        "slug": "whole-cashew-nuts-w240-glp-select",
+        "name": "Whole Cashew Nuts W240",
+        "brand": "GLP Select",
+        "description": "Large W240-grade whole cashews — buttery and sweet.",
+        "category": "dry-fruits",
+        "price": 475,
+        "mrp": 540,
+        "unit": "500 g",
+        "image_url": "https://images.unsplash.com/1593006641231-fc7b94496e06?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "cashews",
+          "kaju"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "1f31f140-86aa-56c9-927f-6e966e4dad31",
+        "slug": "iranian-pistachios-roasted-salted-glp-select",
+        "name": "Iranian Pistachios (Roasted & Salted)",
+        "brand": "GLP Select",
+        "description": "Roasted, lightly salted Iranian pistachios in-shell.",
+        "category": "dry-fruits",
+        "price": 685,
+        "mrp": 780,
+        "unit": "250 g",
+        "image_url": "https://images.unsplash.com/1661836990173-97481f67f85b?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "pistachios",
+          "pista"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "1ad8965a-736c-53c8-b312-f995a422ceba",
+        "slug": "afghan-anjeer-dried-figs-glp-select",
+        "name": "Afghan Anjeer (Dried Figs)",
+        "brand": "GLP Select",
+        "description": "Soft Afghan dried figs — naturally sweet and fibre-rich.",
+        "category": "dry-fruits",
+        "price": 445,
+        "mrp": 525,
+        "unit": "250 g",
+        "image_url": "https://images.pexels.com/photos/37180553.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "anjeer",
+          "figs"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "0a7aa340-79c6-57e3-b24f-f33897bdcc1d",
+        "slug": "seedless-green-raisins-happilo",
+        "name": "Seedless Green Raisins",
+        "brand": "Happilo",
+        "description": "Plump, seedless green raisins (kishmish), sun-dried.",
+        "category": "dry-fruits",
+        "price": 165,
+        "mrp": 199,
+        "unit": "500 g",
+        "image_url": "https://images.pexels.com/photos/37270167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "raisins",
+          "kishmish"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "57eaf7c1-c326-5a35-8a66-ef66f863bdbf",
+        "slug": "chilean-walnut-kernels-glp-select",
+        "name": "Chilean Walnut Kernels",
+        "brand": "GLP Select",
+        "description": "Light halves and quarters of Chilean walnut kernels — omega-rich.",
+        "category": "dry-fruits",
+        "price": 395,
+        "mrp": 460,
+        "unit": "250 g",
+        "image_url": "https://images.unsplash.com/1636816571948-121db9832798?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "walnuts",
+          "akhrot"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "235aa024-c470-5daa-a978-4fe59f589751",
+        "slug": "turkish-dried-apricots-glp-select",
+        "name": "Turkish Dried Apricots",
+        "brand": "GLP Select",
+        "description": "Sun-ripened Turkish apricots — soft, tangy and sweet.",
+        "category": "dry-fruits",
+        "price": 320,
+        "mrp": 365,
+        "unit": "250 g",
+        "image_url": "https://images.unsplash.com/1722886705787-4b8d676309fa?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": false,
+        "is_hamper": false,
+        "tags": [
+          "apricots",
+          "khubani"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "f0a401c1-0a6c-57ba-9639-45b42c721855",
+        "slug": "eco-friendly-cotton-shopping-bag-large-glp-essentials",
+        "name": "Eco-Friendly Cotton Shopping Bag — Large",
+        "brand": "GLP Essentials",
+        "description": "Sturdy 100% cotton tote that folds flat — perfect for store runs.",
+        "category": "accessories",
+        "price": 149,
+        "mrp": 199,
+        "unit": "1 pc",
+        "image_url": null,
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "bag",
+          "tote"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "116f23a6-67c1-5ed2-912a-9da65c67d187",
+        "slug": "insulated-cool-bag-glp-essentials",
+        "name": "Insulated Cool Bag",
+        "brand": "GLP Essentials",
+        "description": "Keeps groceries and frozen items cool on the ride home.",
+        "category": "accessories",
+        "price": 449,
+        "mrp": 529,
+        "unit": "1 pc",
+        "image_url": null,
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "bag",
+          "cooler"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "04818690-0dbf-5136-b59e-41b3f074d11c",
+        "slug": "jute-lunch-bag-with-zip-glp-essentials",
+        "name": "Jute Lunch Bag with Zip",
+        "brand": "GLP Essentials",
+        "description": "Compact jute lunch carrier with zip closure.",
+        "category": "accessories",
+        "price": 129,
+        "mrp": 159,
+        "unit": "1 pc",
+        "image_url": null,
+        "available": true,
+        "is_hamper": false,
+        "tags": [
+          "bag",
+          "lunch"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "901e182d-c5cc-5553-aa02-39da2f2d9e8a",
+        "slug": "diwali-royal-gift-box-glp-hampers",
+        "name": "Diwali Royal Gift Box",
+        "brand": "GLP Hampers",
+        "description": "A festive treasure: premium dry fruits, artisanal sweets, brass diya and a Skinn perfume miniature in a silk-lined box.",
+        "category": "hampers",
+        "price": 1499,
+        "mrp": 1799,
+        "unit": "1 box",
+        "image_url": "https://images.unsplash.com/1720798198170-1a7fe82cba27?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": true,
+        "tags": [
+          "diwali",
+          "gift",
+          "hamper"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "35e80329-fa19-5513-86a7-318373e7089d",
+        "slug": "wedding-return-gift-box-pack-of-10-glp-hampers",
+        "name": "Wedding Return Gift Box (Pack of 10)",
+        "brand": "GLP Hampers",
+        "description": "Ten beautifully wrapped return-gift boxes with dry fruits and a brass keepsake each — ideal for weddings and housewarmings.",
+        "category": "hampers",
+        "price": 2499,
+        "mrp": 2899,
+        "unit": "pack of 10",
+        "image_url": "https://images.unsplash.com/1700352757733-cf5468be5508?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "available": true,
+        "is_hamper": true,
+        "tags": [
+          "wedding",
+          "return gift",
+          "hamper"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "9021b831-ea01-5b3b-b5c6-16883db99250",
+        "slug": "corporate-executive-hamper-glp-hampers",
+        "name": "Corporate Executive Hamper",
+        "brand": "GLP Hampers",
+        "description": "Boardroom-ready gifting: cashews, almonds, figs, coffee and a leather document folio.",
+        "category": "hampers",
+        "price": 3999,
+        "mrp": 4499,
+        "unit": "1 box",
+        "image_url": "https://images.pexels.com/photos/17878238.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": true,
+        "tags": [
+          "corporate",
+          "gift",
+          "hamper"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      },
+      {
+        "id": "ef4232d6-3ee6-58a5-96e1-268551d92909",
+        "slug": "perfume-dry-fruit-gift-set-glp-hampers",
+        "name": "Perfume & Dry Fruit Gift Set",
+        "brand": "GLP Hampers",
+        "description": "Yardley eau de toilette with a 250 g almond-cashew medley in a keepsake tray.",
+        "category": "hampers",
+        "price": 1199,
+        "mrp": 1399,
+        "unit": "1 set",
+        "image_url": "https://images.pexels.com/photos/27393960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "available": true,
+        "is_hamper": true,
+        "tags": [
+          "perfume",
+          "gift",
+          "hamper"
+        ],
+        "created_at": "2026-11-22T15:39:21.938126+00:00"
+      }
+    ],
+    "total": 32,
+    "page": 1,
+    "pages": 1
+  }
+}

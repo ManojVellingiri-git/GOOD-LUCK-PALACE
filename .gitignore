@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+backend_venv/
+venv/
+__pycache__/
+*.pyc
+
+# Production Builds
+dist/
+build/
+
+# Local Database & Secrets
+*.db
+*.sqlite3
+.env
+.admin_initial_secret
+.customer_initial_secret
+
+# Temporary reference files
+*.html
+!index.html
+*_files/
+_old_saved_page_backup/
+bundle.js.map
+extracted_*.css
+inspect_hf.py
+extract_legacy.py
+backups/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

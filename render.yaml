@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: goodluck-palace-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: STORE_OWNER_EMAIL
+        value: owner@goodluckpalace.com
+      - key: JWT_SECRET
+        generateValue: true
+
+  - type: web
+    name: goodluck-palace-frontend
+    runtime: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

@@ -1,0 +1,39 @@
+# ==============================================================================
+# Good Luck Palace (Coimbatore) — Production Caddy Reverse Proxy Configuration
+# Automatic HTTPS via Let's Encrypt / ZeroSSL with Security Headers & Rate Limits
+# ==============================================================================
+
+goodluckpalace.com, www.goodluckpalace.com {
+    # Encode responses using modern compression
+    encode zstd gzip
+
+    # Production Security Headers
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    }
+
+    # API Backend Reverse Proxy (FastAPI / Uvicorn running on port 8001)
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8001 {
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
+    # Static Uploads directory
+    handle /uploads/* {
+        reverse_proxy 127.0.0.1:8001
+    }
+
+    # Frontend Single Page Application (React / Vite production build in /dist)
+    handle {
+        root * /var/www/goodluck-palace/dist
+        try_files {path} /index.html
+        file_server
+    }
+}
