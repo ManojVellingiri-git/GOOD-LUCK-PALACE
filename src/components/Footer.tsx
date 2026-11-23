@@ -188,7 +188,12 @@ export default function Footer() {
       {/* 6. COPYRIGHT & METADATA */}
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Good Luck Palace. All rights reserved.</span>
-        <span className="footer-credit">Handcrafted for Coimbatore · Cross Cut Road</span>
+        <span className="footer-credit">
+          Handcrafted for Coimbatore · Cross Cut Road ·{" "}
+          <Link to="/admin" className="text-[#c49a50]/80 hover:text-[#f8ecd6] transition-colors underline decoration-[#c49a50]/40">
+            Admin Portal
+          </Link>
+        </span>
       </div>
     </footer>
   );
