@@ -132,3 +132,5 @@ export function useAppAuth() {
   if (!ctx) throw new Error("useAppAuth must be used within AuthProvider");
   return ctx;
 }
+
+export const useAuth = useAppAuth;

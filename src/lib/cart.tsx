@@ -5,7 +5,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { useAuth, useUser } from "@clerk/react";
+import { useAuth } from "@/lib/authContext";
 import { apiDelete, apiGet, apiPut } from "@/lib/api";
 import type { CartItem, CouponValidation, Product } from "@/lib/types";
 
@@ -39,8 +39,8 @@ function loadLocal(): CartItem[] {
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>(loadLocal);
   const [coupon, setCoupon] = useState<CouponValidation | null>(null);
-  const { isSignedIn } = useAuth();
-  const { user } = useUser();
+  const { user } = useAuth();
+  const isSignedIn = Boolean(user);
   const hydratedFor = useRef<string | null>(null);
 
   // Persist locally on every change.
