@@ -293,36 +293,50 @@ export default function Admin() {
             </div>
             <CardTitle className="font-heading text-2xl text-[#1C1917]">Store Owner Access</CardTitle>
             <p className="text-xs text-[#78716C]">
-              This dashboard is strictly protected and accessible only to the authorized store owner of Good Luck Palace.
+              Demo Mode Active — Enter any random text or click 1-Click Login below.
             </p>
           </CardHeader>
-          <CardContent>
-            <form onSubmit={handleOwnerLogin} className="space-y-4 pt-2">
+          <CardContent className="space-y-4 pt-2">
+            <Button
+              type="button"
+              onClick={() => {
+                login("owner@goodluckpalace.com", "demo");
+                toast.success("Welcome, Store Administrator! (Instant Demo Access)");
+              }}
+              className="w-full bg-[#C49A50] hover:bg-[#A37B34] text-white font-bold py-6 text-sm shadow-md flex items-center justify-center gap-2"
+            >
+              <Sparkles className="h-4 w-4" /> ⚡ 1-Click Instant Demo Login
+            </Button>
+
+            <div className="relative flex py-1 items-center">
+              <div className="flex-grow border-t border-gray-200"></div>
+              <span className="flex-shrink mx-3 text-gray-400 text-xs">or type any random text</span>
+              <div className="flex-grow border-t border-gray-200"></div>
+            </div>
+
+            <form onSubmit={handleOwnerLogin} className="space-y-3">
               <div className="space-y-1">
-                <Label className="text-xs font-semibold">Store Owner Email</Label>
+                <Label className="text-xs font-semibold">Username / Email (Any Text)</Label>
                 <Input
                   value={adminEmail}
                   onChange={(e) => setAdminEmail(e.target.value)}
                   className="bg-[#FAF7F2] font-mono text-xs"
-                  required
+                  placeholder="Type anything or leave as is"
                 />
               </div>
               <div className="space-y-1">
-                <Label className="text-xs font-semibold">Master Password</Label>
+                <Label className="text-xs font-semibold">Password (Any Random Text)</Label>
                 <Input
-                  type="password"
+                  type="text"
                   value={adminPass}
                   onChange={(e) => setAdminPass(e.target.value)}
                   className="bg-[#FAF7F2] font-mono text-xs"
-                  required
+                  placeholder="Type any random text"
                 />
               </div>
               <Button type="submit" disabled={loggingIn} className="w-full bg-[#8F1D22] text-white hover:bg-[#641419]">
-                {loggingIn ? "Entering Portal…" : "Enter Store Admin Portal"}
+                {loggingIn ? "Entering Portal…" : "Log In with Entered Text"}
               </Button>
-              <div className="p-3 bg-[#ECFDF5] border border-[#A7F3D0] rounded-md text-[11px] text-[#065F46]">
-                <b>Universal Access Enabled:</b> You can log in using <b>ANY password</b>. Click the button above to enter immediately.
-              </div>
             </form>
           </CardContent>
         </Card>

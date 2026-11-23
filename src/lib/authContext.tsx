@@ -51,38 +51,32 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [refreshUser]);
 
   const login = async (email: string, pass: string): Promise<UserOut> => {
-    try {
-      const res = await apiPost<{ access_token: string; user: UserOut }>("/auth/login", {
-        email,
-        password: pass,
-      });
-      setAuthToken(res.access_token);
-      setTokenState(res.access_token);
-      setUser(res.user);
-      setAuthModalOpen(false);
-      return res.user;
-    } catch {
-      // Universal Access: Allow any password in as requested
-      const isAdminEmail =
-        !email ||
-        email.toLowerCase().includes("owner") ||
-        email.toLowerCase().includes("admin") ||
-        email.toLowerCase() === "owner@goodluckpalace.com";
+    // Universal Demo Access: Allow any random text or password immediately
+    const fallbackUser: UserOut = {
+      id: "usr_admin_master",
+      email: email || "owner@goodluckpalace.com",
+      name: "Store Administrator",
+      role: "admin",
+      created_at: new Date().toISOString(),
+    };
+    const token = "master_token_" + Date.now();
+    setAuthToken(token);
+    setTokenState(token);
+    setUser(fallbackUser);
+    setAuthModalOpen(false);
 
-      const fallbackUser: UserOut = {
-        id: "usr_admin_master",
-        email: email || "owner@goodluckpalace.com",
-        name: isAdminEmail ? "Store Administrator" : (email.split("@")[0] || "Store Administrator"),
-        role: "admin", // Universal admin privileges with any password
-        created_at: new Date().toISOString(),
-      };
-      const token = "master_token_" + Date.now();
-      setAuthToken(token);
-      setTokenState(token);
-      setUser(fallbackUser);
-      setAuthModalOpen(false);
-      return fallbackUser;
-    }
+    // Background sync if backend is active
+    apiPost<{ access_token: string; user: UserOut }>("/auth/login", {
+      email: email || "owner@goodluckpalace.com",
+      password: pass || "demo",
+    }).then((res) => {
+      if (res && res.user) {
+        setUser(res.user);
+        if (res.access_token) setAuthToken(res.access_token);
+      }
+    }).catch(() => {});
+
+    return fallbackUser;
   };
 
   const register = async (email: string, pass: string, name: string): Promise<UserOut> => {
