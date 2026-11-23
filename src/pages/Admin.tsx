@@ -462,10 +462,10 @@ export default function Admin() {
                             <span className="text-[#78716C]">{new Date(order.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                           </div>
                           <p className="mt-1 font-medium text-[#1C1917]">{order.customer_name} · {order.phone}</p>
-                          <p className="text-[#78716C] truncate max-w-sm">{order.items.map((i) => `${i.name} (${i.qty})`).join(", ")}</p>
+                          <p className="text-[#78716C] truncate max-w-sm">{(order.items ?? []).map((i) => `${i.name} (${i.qty})`).join(", ")}</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-mono font-bold text-sm text-[#991B1B]">{inr(order.total)}</p>
+                          <p className="font-mono font-bold text-sm text-[#991B1B]">{inr(order.total ?? order.total_amount ?? 0)}</p>
                           <Badge variant="outline" className="mt-1 uppercase text-[10px]">
                             {order.status}
                           </Badge>
@@ -592,9 +592,9 @@ export default function Admin() {
 
                         {/* Order Items */}
                         <div className="md:col-span-5 border-l border-r border-[#E7E2DA] px-0 md:px-4 space-y-2">
-                          <p className="font-bold text-xs text-[#78716C] uppercase">Items ({order.items.length})</p>
+                          <p className="font-bold text-xs text-[#78716C] uppercase">Items ({(order.items ?? []).length})</p>
                           <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1">
-                            {order.items.map((item, idx) => (
+                            {(order.items ?? []).map((item, idx) => (
                               <div key={idx} className="flex justify-between items-center gap-2">
                                 <span className="truncate">{item.name} <span className="text-[#78716C]">× {item.qty} ({item.unit})</span></span>
                                 <span className="font-mono font-medium">{inr(item.price * item.qty)}</span>
@@ -603,7 +603,7 @@ export default function Admin() {
                           </div>
                           <div className="border-t border-[#E7E2DA] pt-2 flex justify-between font-bold text-sm text-[#991B1B]">
                             <span>Total (incl. delivery):</span>
-                            <span className="font-mono">{inr(order.total)}</span>
+                            <span className="font-mono">{inr(order.total ?? order.total_amount ?? 0)}</span>
                           </div>
                         </div>
 
@@ -1147,7 +1147,7 @@ export default function Admin() {
                     <Badge variant="outline" className="text-[10px]">
                       {c.discount_type === "percent" ? `${c.value}% OFF` : `INR ${c.value} FLAT`}
                     </Badge>
-                    <p className="text-[#78716C] mt-0.5">Min. order: {inr(c.min_order)} · Used: {c.used_count} times</p>
+                    <p className="text-[#78716C] mt-0.5">Min. order: {inr(c.min_order ?? c.min_order_amount ?? 0)} · Used: {c.used_count ?? 0} times</p>
                   </div>
                   <Button
                     size="icon"
@@ -1266,7 +1266,7 @@ export default function Admin() {
                 <div className="space-y-1">
                   <Label className="text-xs font-semibold">Serviceable Delivery Areas (Comma separated)</Label>
                   <Input
-                    value={settingsForm.serviceable_areas.join(", ")}
+                    value={(settingsForm.serviceable_areas ?? []).join(", ")}
                     onChange={(e) => setSettingsForm({ ...settingsForm, serviceable_areas: e.target.value.split(",").map(s => s.trim()).filter(Boolean) })}
                     className="bg-[#FAF7F2] text-xs"
                   />

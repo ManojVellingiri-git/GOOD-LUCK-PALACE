@@ -30,6 +30,7 @@ export interface Product {
 export interface ProductPage {
   items: Product[];
   total: number;
+  total_amount?: number;
   page: number;
   pages: number;
 }
@@ -92,6 +93,7 @@ export interface Order {
   delivery_fee: number;
   gst_amount?: number;
   total: number;
+  total_amount?: number;
   payment_method: "razorpay" | "whatsapp";
   payment_status: "pending" | "paid" | "failed";
   source: "online" | "whatsapp" | "manual";

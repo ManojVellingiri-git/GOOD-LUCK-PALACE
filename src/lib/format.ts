@@ -1,7 +1,8 @@
 // Shared formatting helpers — Indian rupee prices, dates and status labels.
 
-export function inr(v: number): string {
-  return "₹" + v.toLocaleString("en-IN", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+export function inr(v: number | null | undefined): string {
+  if (v === null || v === undefined || isNaN(Number(v))) return "₹0";
+  return "₹" + Number(v).toLocaleString("en-IN", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
 export function fmtDate(iso: string): string {
