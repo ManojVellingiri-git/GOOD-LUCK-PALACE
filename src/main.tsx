@@ -7,6 +7,8 @@ import App from './App.tsx'
 import { queryClient } from './lib/queryClient'
 import { ErrorBoundary } from './components/ErrorBoundary.tsx'
 
+(window as any).__GOOD_LUCK_PALACE_LOADED__ = true;
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>

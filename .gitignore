@@ -5,10 +5,6 @@ venv/
 __pycache__/
 *.pyc
 
-# Production Builds
-dist/
-build/
-
 # Local Database & Secrets
 *.db
 *.sqlite3
